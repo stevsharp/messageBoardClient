@@ -1,0 +1,13 @@
+
+<div *ngFor="let message of messages">
+    <mat-card>
+      <mat-card-title>
+        {{message.text}} 
+      </mat-card-title>
+      <mat-card-content>
+        by: {{message.owner}}      
+      </mat-card-content>
+
+    </mat-card>
+</div>
+
