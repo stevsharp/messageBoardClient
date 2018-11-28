@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WebService } from '../web.service';
 
 @Component({
   selector: 'app-messages',
@@ -7,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessagesComponent implements OnInit {
 
+  //messages = [{text:'some text', owner:'Time'},{text:'other message', owner:'Jane'}];
+  messages = [];
 
-  messages = [{text:'some text', owner:'Time'},{text:'other message', owner:'Jane'}];
+  constructor(private webService: WebService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  async ngOnInit() {
+    const response = await this.webService.getMessages();
+     console.log(response);
   }
 
 }

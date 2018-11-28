@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,6 +9,9 @@ import {} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages/messages.component';
+
+import { WebService } from './web.service';
+import {HttpModule} from '@angular/http';
 
 import {
   MatButtonModule, 
@@ -32,9 +36,10 @@ import {
     MatCardModule,
     MatInputModule,
     MatSnackBarModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [WebService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
